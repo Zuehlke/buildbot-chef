@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+
+driver_config:
+  network:
+    - ["private_network", {ip: "172.16.40.15"}]
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12.3.0
+  chef_omnibus_install_options: -d /tmp/vagrant-cache/vagrant_omnibus
+
+platforms:
+- name: ubuntu-14.04
+
+suites:
+- name: default
+  run_list: ["recipe[buildbot-sample]"]
+  attributes: {}

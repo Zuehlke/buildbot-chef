@@ -1,0 +1,15 @@
+DEPENDENCIES
+  buildbot-sample
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.7.0)
+  build-essential (2.2.3)
+  buildbot-sample (0.0.1)
+    apt (= 2.7.0)
+    python (= 1.4.4)
+  python (1.4.4)
+    build-essential (>= 0.0.0)
+    yum (>= 0.0.0)
+  yum (3.6.1)
