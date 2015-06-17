@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: buildbot-app
+# Cookbook Name:: buildbot-chef
 # Recipe:: default
 #
 # Copyright 2013, YOUR_COMPANY_NAME

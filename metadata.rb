@@ -1,4 +1,4 @@
-name             'buildbot-sample'
+name             'buildbot-chef'
 maintainer       'kimo'
 maintainer_email 'kimo@zuehlke.com'
 license          'All rights reserved'
