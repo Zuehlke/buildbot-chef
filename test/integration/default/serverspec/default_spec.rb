@@ -1,24 +1,30 @@
 require 'spec_helper'
 
-describe 'jenkins-simple-app::default' do
+describe 'buildbot-chef::default' do
   #
   # Serverspec examples can be found at
   # http://serverspec.org/resource_types.html
   #
 
-  it 'starts the jenkins service' do
-    expect(service('jenkins')).to be_running
+  it 'starts the buildbot master service' do
+    expect(service('buildbot')).to be_running
   end
-  it 'enables the jenkins service on startup' do
-    expect(service('jenkins')).to be_enabled
+  it 'enables the buildbot service on startup' do
+    expect(service('buildbot')).to be_enabled
   end
-  it 'runs jenkins on port 8080' do
-    expect(port(8080)).to be_listening
+  it 'runs buildbot on port 8010' do
+    expect(port(8010)).to be_listening
+  end
+  it 'starts the buildbot slave' do
+    expect(service('buildslave')).to be_running
+  end
+  it 'enables the buildbot slave service on startup' do
+    expect(service('buildslave')).to be_enabled
   end
 
-  it 'installs jenkins version 1.609.1' do
-    cmd = command('wget -qO- localhost:8080')
-    expect(cmd.stdout).to include 'Jenkins ver. 1.609.1'
+  it 'installs buildbot version 0.8.12' do
+    cmd = command('wget -qO- localhost:8010')
+    expect(cmd.stdout).to include '(0.8.12)'
   end
 
 end
