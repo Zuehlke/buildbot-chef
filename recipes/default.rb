@@ -9,6 +9,7 @@
 
 # refresh apt cache
 include_recipe 'apt'
+include_recipe 'chef-dk'
 
 include_recipe 'python'
 
@@ -17,6 +18,12 @@ package ['git']
 
 python_pip "buildbot"
 python_pip "buildbot-slave"
+
+chef_dk 'chef_dk' do
+    version '0.6.2-1'
+    global_shell_init true
+    action :install
+end
 
 execute "buildbot create-master /tmp/experimental_buildmaster"
 

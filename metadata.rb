@@ -8,3 +8,4 @@ version          '0.0.1'
 
 depends 'apt', '2.7.0'
 depends 'python', '1.4.4'
+depends 'chef-dk', '3.1.0'
