@@ -31,7 +31,7 @@ describe 'buildbot-chef::default' do
     let(:chef_run) do
 
       stub_command("/usr/bin/python -c 'import setuptools'")
-      runner = ChefSpec::ServerRunner.new
+      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04')
       runner.converge(described_recipe)
     end
 
