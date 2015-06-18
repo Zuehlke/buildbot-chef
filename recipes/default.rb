@@ -25,8 +25,8 @@ package ['python-pip']
 package ['git']
 package ['linux-headers-3.13.0-24-generic']
 
-execute '/etc/init.d/vboxdrv setup' do
-  command 'command'
+execute 'Update vboxdrv' do
+  command 'sudo /etc/init.d/vboxdrv setup'
   action :run
 end
 
