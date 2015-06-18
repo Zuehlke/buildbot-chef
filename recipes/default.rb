@@ -21,7 +21,7 @@ node.set['virtualbox']['version'] = '4.3:i386'
 node.from_file(run_context.resolve_attribute("virtualbox", "default"))
 include_recipe 'virtualbox'
 
-execute 'sudo /etc/init.d/vboxdrv' do
+execute 'sudo /etc/init.d/vboxdrv setup' do
   command 'command'
   action :run
 end
