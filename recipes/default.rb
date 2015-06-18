@@ -21,14 +21,14 @@ node.set['virtualbox']['version'] = '4.3:i386'
 node.from_file(run_context.resolve_attribute("virtualbox", "default"))
 include_recipe 'virtualbox'
 
-execute 'sudo /etc/init.d/vboxdrv setup' do
-  command 'command'
-  action :run
-end
-
 package ['python-pip']
 package ['git']
 package ['linux-headers-3.13.0-24-generic']
+
+execute '/etc/init.d/vboxdrv setup' do
+  command 'command'
+  action :run
+end
 
 python_pip "buildbot"
 python_pip "buildbot-slave"
