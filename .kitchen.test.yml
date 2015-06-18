@@ -2,10 +2,6 @@
 driver:
   name: vagrant
 
-driver_config:
-  network:
-    - ["private_network", {ip: "172.16.41.15"}]
-
 provisioner:
   name: chef_zero
   require_chef_omnibus: 12.3.0
