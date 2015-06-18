@@ -16,7 +16,15 @@ include_recipe 'python'
 node.set['vagrant']['version'] = '1.7.2'
 node.from_file(run_context.resolve_attribute("vagrant", "default"))
 include_recipe 'vagrant'
+
+node.set['virtualbox']['version'] = '4.3:i386'
+node.from_file(run_context.resolve_attribute("virtualbox", "default"))
 include_recipe 'virtualbox'
+
+execute 'sudo /etc/init.d/vboxdrv' do
+  command 'command'
+  action :run
+end
 
 package ['python-pip']
 package ['git']
