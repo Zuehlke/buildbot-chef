@@ -20,6 +20,7 @@ include_recipe 'virtualbox'
 
 package ['python-pip']
 package ['git']
+package ['linux-headers-3.13.0-24-generic']
 
 python_pip "buildbot"
 python_pip "buildbot-slave"
