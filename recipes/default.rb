@@ -13,6 +13,11 @@ include_recipe 'chef-dk'
 
 include_recipe 'python'
 
+node.set['vagrant']['version'] = '1.7.2'
+node.from_file(run_context.resolve_attribute("vagrant", "default"))
+include_recipe 'vagrant'
+include_recipe 'virtualbox'
+
 package ['python-pip']
 package ['git']
 
